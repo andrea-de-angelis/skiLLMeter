@@ -73,6 +73,6 @@ if __name__ == "__main__":
     xcopa_transformation.predict(model, tokenizer, labels=args.labels)
     model_id = args.model_id.replace("/", "__")
     labels = args.labels.replace(" ", "__")
-    xcopa_transformation.get_transformed_data().to_csv(f"outputs/{model_id}_xcopa_{labels}.log", index=False)
+    xcopa_transformation.get_transformed_data().to_csv(f"outputs/{model_id}_xcopa_{labels}.csv", index=False)
     accuracy = compute_accuracy(xcopa_transformation.get_transformed_data())
     logging.info(f"Accuracy: {accuracy}")
